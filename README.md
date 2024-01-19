@@ -1,5 +1,8 @@
 # Time Tracker
 
+![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTJrOHhldDRwcHFnaHliNTZvNmFzcWdod21sdGpueGZ4cnZidnlnYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1wl6s091HHHpDq5Y6n/giphy.gif)
+
+
 Time Tracker is a web-based application built using the Symfony framework. It allows users to efficiently track time spent on various tasks throughout the day. With a simple and clean user interface, users can start and stop tasks, view the list of completed tasks, and see the total time spent on tasks for the day.
 
 ## Features

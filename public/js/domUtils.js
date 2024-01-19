@@ -26,7 +26,11 @@ export function addTaskToList(task, taskList, parseDuration, formatDuration) {
         taskList.appendChild(div);
         highlightElement(div);
     }
+
 }
+
+
+
 export function updateTimerDisplay(timerDisplay, elapsedTime) {
     let seconds = elapsedTime % 60;
     let minutes = Math.floor(elapsedTime / 60) % 60;

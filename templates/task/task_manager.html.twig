@@ -26,13 +26,13 @@
 
         <div class="task-list">
             <h2 style="text-align: center;">Done ✅</h2>
-                <div class="info-pill">Total time working today: {{ totalDuration }}</div>
+                <div class="info-pill" id="totalCount">Total time working today: {{ totalDuration }}</div>
                 <div id="taskList" class="taskList">
             {% if tasks is empty %}
                 <div class="info-pill">No tasks yet.</div>
             {% else %}
 
-                    <div class="task-item start">
+                    <div class="task-item-title">
                         <span>Tasks</span>
                         <span>Duration</span>
                     </div>

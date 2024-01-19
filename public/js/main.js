@@ -35,7 +35,27 @@ document.addEventListener('DOMContentLoaded', function() {
         stopTaskApi(taskId).then(data => {
             addTaskToList(data.task, taskList, parseDuration, formatDuration);
         }).catch(error => console.error('Error:', error));
+        updateTotalDuration();
     });
+
+    function updateTotalDuration() {
+        let totalDurationSeconds = 0;
+
+        document.querySelectorAll('.task-item').forEach(item => {
+            const durationElement = item.querySelector('span:last-child');
+            if (durationElement) {
+                const duration = parseDuration(durationElement.textContent);
+                totalDurationSeconds += duration;
+            }
+        });
+
+        const formattedTotalDuration = formatDuration(totalDurationSeconds);
+
+        const totalCountElement = document.getElementById('totalCount');
+        if (totalCountElement) {
+            totalCountElement.textContent = `Total time working today: ${formattedTotalDuration}`;
+        }
+    }
 
     function formatDuration(seconds) {
         if (typeof seconds !== 'number' || !isFinite(seconds)) {
