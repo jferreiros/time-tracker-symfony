@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  app:
+    platform: linux/amd64
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APP_ENV=dev
+
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: time_tracker
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

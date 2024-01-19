@@ -1,0 +1,21 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+homepage:
+    path: /
+    controller: App\Controller\TaskController::index
+    # config/routes.yaml
+
+task_start:
+    path: /task/start
+    controller: App\Controller\TaskController::startTask
+    methods: [ POST ]
+
+task_stop:
+    path: /task/stop/{id}
+    controller: App\Controller\TaskController::stopTask
+    methods: [ POST ]
+

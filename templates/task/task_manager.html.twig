@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/task_manager.css') }}">
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="title">
+            <h1>Task Manager</h1>
+        </div>
+
+        <div class="new-task-input">
+            <div id="taskInput" class="task-input">
+                <div class="field">
+                    <input type="text"  id="taskName" placeholder="Enter task name" />
+                    <div class="line"></div>
+                </div>
+                <button class="start button-9" id="startButton">Start</button>
+                <button class="stop button-9" id="stopButton" style="display:none;">Stop</button>
+            </div>
+            <div id="timer" class="timer">00:00:00</div>
+        </div>
+
+        <div class="task-list">
+            <h2 style="text-align: center;">Done ✅</h2>
+                <div class="info-pill">Total time working today: {{ totalDuration }}</div>
+                <div id="taskList" class="taskList">
+            {% if tasks is empty %}
+                <div class="info-pill">No tasks yet.</div>
+            {% else %}
+
+                    <div class="task-item start">
+                        <span>Tasks</span>
+                        <span>Duration</span>
+                    </div>
+                    {% for task in tasks %}
+                        <div class="task-item">
+                            <span>{{ task.name }}</span>
+                            <span>{{ task.duration }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="module" src="{{ asset('js/main.js') }}"></script>
+{% endblock %}

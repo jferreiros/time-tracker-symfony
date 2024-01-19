@@ -1,0 +1,207 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: 25px;
+    gap: 1rem;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: rgba(168,222,0,1);
+}
+
+.new-task-input, .task-list {
+    flex: 1;
+    min-width: 300px; /* Adjust this for better mobile responsiveness */
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.task-list {
+    background-color: #006f69;
+}
+
+.task-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.timer {
+    text-align: center;
+    font-size: 2em; /* Larger font size for better visibility */
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f2f2f2; /* Light grey background */
+    color: #333; /* Dark text for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif; /* Modern, readable font */
+    letter-spacing: 2px; /* Spacing between characters */
+    border: 1px solid #ddd; /* Light border for definition */
+    display: inline-block; /* Makes the timer block centered */
+}
+
+
+#taskName {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 50%;
+    padding: 2rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.info-pill {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px; /* Pill shape */
+    background-color: #515151; /* Light blue background */
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.task-list {
+    text-align: center; /* Centering content */
+}
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.start {
+    background-color: rgba(168,222,0,1);
+}
+
+.stop {
+    background-color: #006f69;
+}
+
+.button-9 {
+    backface-visibility: hidden;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 50%;
+}
+
+.button-9:disabled {
+    cursor: default;
+}
+
+.button-9:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+input {
+    background: 0;
+    border: 0;
+    outline: none;
+    width: 80vw;
+    max-width: 400px;
+    font-size: 1.5em;
+    transition: padding 0.3s 0.2s ease;
+}
+
+input:focus {
+    padding-bottom: 5px;
+}
+
+input:focus + .line:after {
+    transform: scaleX(1);
+}
+
+.field {
+    position: relative;
+}
+
+.field .line {
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: -8px;
+    background: rgba(168,222,0,1);
+}
+
+.field .line:after {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    background: #006f69;
+}
+
+.highlight {
+    animation: highlightEffect 2s; /* Change duration as needed */
+}
+
+@keyframes highlightEffect {
+    from { background-color: rgba(168,222,0,1); } /* Change color as needed */
+    to { background-color: #fff }
+}
